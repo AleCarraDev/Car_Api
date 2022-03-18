@@ -1,0 +1,9 @@
+{
+  "name": "Car_Api",
+  "version": "1.0.0",
+  "description": "Projeto realizado na semana 13 no curso Otterwise",
+  "main": "index.js",
+  "repository": "git@github.com:AleCarraDev/Car_Api.git",
+  "author": "Alessandro Carra",
+  "license": "MIT"
+}
