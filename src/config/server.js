@@ -3,7 +3,7 @@ import multer from "fastify-multer";
 import fastifyStatic from "fastify-static";
 import path from "path";
 import cors from "fastify-cors";
-import postsRoutes from "../routes/posts-routes.js";
+import postsRoutes from "../routes/index.js.js";
 
 const __dirname = path.resolve();
 
