@@ -1,21 +1,22 @@
 {
-  "name": "estudo-de-caso",
-  "type": "module",
+  "name": "Project-CarsAPI",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.9.1",
+    "fastify": "^3.27.1",
+    "fastify-helmet": "^7.0.1",
+    "fastify-multer": "^2.0.2",
+    "fastify-static": "^4.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
-    "prisma": "^3.11.0"
-  },
-  "dependencies": {
-    "@prisma/client": "^3.11.0",
-    "fastify": "^3.27.4",
-    "fastify-cors": "^6.0.3",
-    "fastify-multer": "^2.0.2",
-    "fastify-static": "^4.6.0"
+    "prisma": "^3.9.1"
   }
 }
