@@ -13,4 +13,5 @@
 #### Observações
 
 ● Utilize Fastify e Prisma ORM para o setup inicial da aplicação;
+
 ● Utilizar o padrão REST para nomenclatura e padrão de rotas.
