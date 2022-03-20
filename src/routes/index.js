@@ -6,7 +6,7 @@ import * as BrandController from "../controllers/brand-controller.js";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/images/");
+    cb(null, "public/images");
   },
   filename: (req, file, cb) => {
     const extension = path.extname(file.originalname);

@@ -15,7 +15,7 @@ export const create = async (req, reply) => {
     });
     return reply.status(201).send(car);
   } catch (error) {
-    reply.status(500).send({ error: "Error" });
+    reply.status(500).send({ error: "Deu problema mermão" });
   }
 };
 
@@ -31,7 +31,7 @@ export const del =
       });
       reply.status(200).send("Carro deletado com sucesso");
     } catch (error) {
-      reply.status(500).send({ error: "Error" });
+      reply.status(500).send({ error: "Deu problema mermão" });
     }
   });
 
@@ -57,7 +57,7 @@ export const get =
       }
       reply.send(cars);
     } catch (error) {
-      reply.status(500).send({ error: "Error" });
+      reply.status(500).send({ error: "Deu problema mermão" });
     }
   });
 
@@ -100,6 +100,6 @@ export const update = async (req, reply) => {
     console.log(car);
     return reply.status(201).send(car);
   } catch (error) {
-    reply.status(500).send({ error: "Error" });
+    reply.status(500).send({ error: "Deu problema mermão" });
   }
 };
