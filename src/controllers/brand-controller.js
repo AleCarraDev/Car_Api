@@ -15,51 +15,48 @@ export const create = async (req, reply) => {
   }
 };
 
-export const del =
-  (`/brand`,
-  async (req, reply) => {
-    const { id } = req.query;
-    try {
-      const brand = await prisma.brand.delete({
+export const del = async (req, reply) => {
+  const { id } = req.params;
+  console.log(Number(id));
+  try {
+    const brand = await prisma.brand.delete({
+      where: {
+        id: Number(id),
+      },
+    });
+    reply.status(200).send("Brand deletada com sucesso");
+  } catch (error) {
+    reply.status(500).send(error.message);
+  }
+};
+
+export const get = async (req, reply) => {
+  const { id } = req.query;
+
+  try {
+    if (Number(id)) {
+      const brands = await prisma.brand.findMany({
         where: {
           id: Number(id),
         },
+        include: { cars: true },
       });
-      reply.status(200).send("Brand deletada com sucesso");
-    } catch (error) {
-      reply.status(500).send({ error: "Error" });
+      return brands;
+    } else {
+      const brands = await prisma.brand.findMany({
+        include: { cars: true },
+      });
+      return brands;
     }
-  });
-
-export const get =
-  ("/brand",
-  async (req, reply) => {
-    const { id } = req.query;
-
-    try {
-      if (Number(id)) {
-        const brands = await prisma.brand.findMany({
-          where: {
-            id: Number(id),
-          },
-          include: { cars: true },
-        });
-        return brands;
-      } else {
-        const brands = await prisma.brand.findMany({
-          include: { cars: true },
-        });
-        return brands;
-      }
-      reply.send(brands);
-    } catch (error) {
-      reply.status(500).send({ error: "Error" });
-    }
-  });
+    reply.send(brands);
+  } catch (error) {
+    reply.status(500).send({ error: "Error" });
+  }
+};
 
 export const put = async (req, reply) => {
   const { name } = req.body;
-  const { id } = req.query;
+  const { id } = req.params;
 
   try {
     const brand = await prisma.brand.update({

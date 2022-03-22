@@ -9,37 +9,39 @@ export const create = async (req, reply) => {
       data: {
         name,
         year,
-        brand_id: Number(brand_id),
         image_url: file.path,
+        brand: {
+          connect: { id: +brand_id },
+        },
       },
     });
+    console.log(car);
     return reply.status(201).send(car);
   } catch (error) {
     reply.status(500).send({ error: "Error" });
   }
 };
 
-export const del =
-  (`/cars`,
-  async (req, reply) => {
-    const { id } = req.query;
-    try {
-      const car = await prisma.car.delete({
-        where: {
-          id: Number(id),
-        },
-      });
-      reply.status(200).send("Carro deletado com sucesso");
-    } catch (error) {
-      reply.status(500).send({ error: "Error" });
-    }
-  });
+export const del = async (req, reply) => {
+  const { id } = req.params;
+  console.log(Number(id));
+  try {
+    const car = await prisma.car.delete({
+      where: {
+        id: Number(id),
+      },
+    });
+    reply.status(200).send("Carro deletado com sucesso");
+  } catch (error) {
+    reply.status(500).send({ error: "Error" });
+  }
+};
 
 export const get =
   ("/cars",
   async (req, reply) => {
     const { id } = req.query;
-
+    console.log(Number(id));
     try {
       if (Number(id)) {
         const cars = await prisma.car.findMany({
@@ -62,7 +64,7 @@ export const get =
   });
 
 export const update = async (req, reply) => {
-  const { id } = req.query;
+  const { id } = req.params;
   let data = {};
 
   if (req.body.name) {

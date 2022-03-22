@@ -1,291 +1,376 @@
 {
-  "info": {
-    "_postman_id": "f6bfb95a-e18e-4b05-a611-a7c5160bb65c",
-    "name": "Projeto apicar",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Carros",
-      "item": [
-        {
-          "name": "Todos os carros",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "",
-                "value": "",
-                "type": "text",
-                "disabled": true
-              }
-            ],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/cars?",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["cars"],
-              "query": [
-                {
-                  "key": "",
-                  "value": null
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Carro Id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/cars?id=4",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["cars"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "4"
-                },
-                {
-                  "key": "id",
-                  "value": "2",
-                  "disabled": true
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Deletando Carro Id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/cars?id=10",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["cars"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "10"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Inserindo Novo Carro",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/cars?id=2&name=brand_name",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["cars"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "2"
-                },
-                {
-                  "key": "name",
-                  "value": "brand_name"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Inserindo novo carro por id",
-          "request": {
-            "method": "PATCH",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "name",
-                  "value": "edited car",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": {
-              "raw": "http://localhost:3000/cars?id=2",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["cars"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "2"
-                }
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "name": "Marca",
-      "item": [
-        {
-          "name": "All brands",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/brand",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["brand"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Marca por id",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/brand?id=2",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["brand"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "2"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Deletando Marca por id",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/brand?id=5",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["brand"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "5"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Nova marca",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "formdata",
-              "formdata": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/brand",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["brand"]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "inserindo marca por id",
-          "request": {
-            "method": "PUT",
-            "header": [],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": []
-            },
-            "url": {
-              "raw": "http://localhost:3000/brand?id=2",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "3000",
-              "path": ["brand"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "2"
-                }
-              ]
-            }
-          },
-          "response": []
-        }
-      ]
-    }
-  ]
+	"info": {
+		"_postman_id": "f6bfb95a-e18e-4b05-a611-a7c5160bb65c",
+		"name": "Projeto apicar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Carros",
+			"item": [
+				{
+					"name": "Todos os carros",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cars"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carro Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/cars?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cars"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserindo Novo Carro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Renault",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2022",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"type": "file",
+									"src": "/home/alessandro-gera-solucoes/Imagens/download.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cars"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "brand_name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando Carro Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/cars/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cars",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserindo novo carro por id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Renault2",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2020",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/cars/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cars",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Marca",
+			"item": [
+				{
+					"name": "All brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Marca por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando Marca por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/brand/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"11"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nova marca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"Renault\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inserindo marca por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"renault10\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"10"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
 }

@@ -21,12 +21,12 @@ const routes = {
   createCar: {
     method: "POST",
     url: "/cars",
-    preHandler: upload.single("image"),
+    preHandler: upload.single("image_url"),
     handler: CarsController.create,
   },
   delCar: {
     method: "DELETE",
-    url: `/cars`,
+    url: `/cars/:id`,
     handler: CarsController.del,
   },
   getCar: {
@@ -36,8 +36,8 @@ const routes = {
   },
   updateCar: {
     method: "PATCH",
-    url: `/cars`,
-    preHandler: upload.single("image"),
+    url: `/cars/:id`,
+    preHandler: upload.single("image_url"),
     handler: CarsController.update,
   },
   createBrand: {
@@ -47,7 +47,7 @@ const routes = {
   },
   delBrand: {
     method: "DELETE",
-    url: `/brand`,
+    url: `/brand/:id`,
     handler: BrandController.del,
   },
   getBrand: {
@@ -57,7 +57,7 @@ const routes = {
   },
   putBrand: {
     method: "PUT",
-    url: `/brand`,
+    url: `/brand/:id`,
     handler: BrandController.put,
   },
 };
